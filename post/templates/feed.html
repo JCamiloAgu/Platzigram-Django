@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>PlatziGram</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+		<br><br>
+		<div class="container">
+			<div class="row">
+				{% for posts in post %}
+				<div class="col-lg-4 offset-lg-4">
+					<div class="media">
+						<img class="mr-3 rounded-circle"src="{{posts.user.picture}}" alt="{{posts.user.name}}">
+						<div class="media-body">
+							<h5 class="mt-0">{{posts.user.name}}</h5>
+							{{posts.timestamp}}
+						</div>
+					</div>
+					<img class="img-fluid mt-3 border rounded"src="{{ posts.photo }}" alt="{{ posts.title}}">
+					<h6 class="ml-1 mt-1">{{ posts.title }}</h6>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+</body>
+</html>
